@@ -1,6 +1,8 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="3e63b3da-6301-4ea3-b3e6-8fc3a7482a8b_InjectionAvoidSQLInjectionUseParameterizedQueriesStatement" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="3e63b3da-6301-4ea3-b3e6-8fc3a7482a8b_InjectionAvoidSQLInjectionUseParameterizedQueriesStatement1" enabled="false" level="SENSEI ERROR" enabled_by_default="false" />
     <inspection_tool class="fcd36335-ac86-4bef-8d30-062d8aae0364_CryptoCipherInsecureAsymmetricCryptographicAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
     <inspection_tool class="fcd36335-ac86-4bef-8d30-062d8aae0364_CryptoKeyAgreementGuideonApprovedCryptographicAlgorithm" enabled="true" level="SENSEI MARKED INFO" enabled_by_default="true" />
     <inspection_tool class="fcd36335-ac86-4bef-8d30-062d8aae0364_CryptoKeyAgreementInsecureCryptographicAlgorithm" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />

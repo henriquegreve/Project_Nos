@@ -1,11 +1,10 @@
 package com.greve.Database;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class CreateTables {
 
-    public void tables(){
+    public static ArrayList<String> tables(){
 
         ArrayList<String> tables = new ArrayList<>();
 
@@ -88,6 +87,22 @@ public class CreateTables {
                 + "QUANTITY_CHILDS INT NOT NULL, "
                 + "PRIMARY KEY(ID) );"
         );
-        
+
+        tables.add("CREATE TABLE IF NOT EXISTS ITEMS ( "
+                + "ID INTEGER NOT NULL, "
+                + "DESCRICAO VARCHAR(100) NOT NULL, "
+                + "SEGMENTO VARCHAR(50) NOT NULL, "
+                + "MARCA VARCHAR(50), "
+                + "PRIMARY KEY(ID) );"
+        );
+
+        tables.add("CREATE TABLE IF NOT EXISTS VERSION( "
+                + "ID INTEGER NOT NULL AUTO_INCREMENT, "
+                + "DB_VERSION VARCHAR(10) NOT NULL, "
+                + "SOFTWARE_VERSION VARCHAR(15) NOT NULL, "
+                + "PRIMARY KEY(ID) );"
+        );
+
+        return tables;
     }
 }
