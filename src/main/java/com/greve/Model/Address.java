@@ -1,5 +1,7 @@
 package com.greve.Model;
 
+import com.greve.DAO.AddressDAO;
+
 public class Address {
 
     private long id;
@@ -8,7 +10,6 @@ public class Address {
     private String bairro;
     private int type;
     private String complemento;
-    private String bloco;
     private String numero;
 
     public long getId() {
@@ -59,19 +60,17 @@ public class Address {
         this.complemento = complemento;
     }
 
-    public String getBloco() {
-        return bloco;
-    }
-
-    public void setBloco(String bloco) {
-        this.bloco = bloco;
-    }
-
     public String getNumero() {
         return numero;
     }
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public static int getIdAddress(){
+        AddressDAO dao = new AddressDAO();
+
+        return dao.getIdAddress();
     }
 }

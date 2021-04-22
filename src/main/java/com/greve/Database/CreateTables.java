@@ -10,8 +10,9 @@ public class CreateTables {
 
         tables.add("CREATE TABLE IF NOT EXISTS USERS ("
                 + "ID INTEGER NOT NULL AUTO_INCREMENT, "
+                + "NAME VARCHAR(100) NOT NULL, "
                 + "USERNAME VARCHAR(30) NOT NULL, "
-                + "PASSWD VARCHAR(16) NOT NULL, "
+                + "PASSWD VARCHAR(200) NOT NULL, "
                 + "LEVEL INT NOT NULL, "
                 + "PRIMARY KEY (ID) );"
         );
@@ -42,12 +43,11 @@ public class CreateTables {
         tables.add("CREATE TABLE IF NOT EXISTS ADDRESS ("
                 + "ID INTEGER NOT NULL AUTO_INCREMENT, "
                 + "RUA VARCHAR(100) NOT NULL, "
-                + "CEP VARCHAR(10) NOT NULL, "
-                + "BAIRRO VARCHAR(100) NOT NULL, "
-                + "TIPO INTEGER NOT NULL, "
-                + "COMPLEMENTO VARCHAR(30) NOT NULL, "
-                + "BLOCO VARCHAR(8) NOT NULL, "
                 + "NUMERO VARCHAR(8) NOT NULL, "
+                + "BAIRRO VARCHAR(100) NOT NULL, "
+                + "CEP VARCHAR(10) NOT NULL, "
+                + "TIPO VARCHAR(15) NOT NULL, " //0 - Casa || 1 - Apartment
+                + "COMPLEMENTO VARCHAR(30), "
                 + "PRIMARY KEY(ID) );"
         );
 
@@ -61,20 +61,20 @@ public class CreateTables {
         );
 
         tables.add("CREATE TABLE IF NOT EXISTS DONOR ("
-                + "ID INTEGER NOT NULL, "
+                + "ID INTEGER NOT NULL AUTO_INCREMENT, "
                 + "FIRST_NAME VARCHAR(100) NOT NULL, "
                 + "LAST_NAME VARCHAR(50) NOT NULL, "
                 + "CPF_CNPJ VARCHAR(25) NOT NULL, "
                 + "ID_ADDRESS INTEGER NOT NULL, "
                 + "EMAIL VARCHAR(120), "
                 + "CONTACT VARCHAR(30), "
-                + "TYPE INTEGER NOT NULL, "
-                + "DATE DATE NOT NULL, "
+                + "TYPE VARCHAR(10) NOT NULL, "
+                + "DATE_REG DATE, "
                 + "PRIMARY KEY(ID) );"
         );
 
         tables.add("CREATE TABLE IF NOT EXISTS FAMILY( "
-                + "ID INTEGER NOT NULL, "
+                + "ID INTEGER NOT NULL AUTO_INCREMENT, "
                 + "FIRST_NAME VARCHAR(100) NOT NULL, "
                 + "LAST_NAME VARCHAR(50) NOT NULL, "
                 + "DOCUMENT VARCHAR(20) NOT NULL, "
@@ -91,15 +91,30 @@ public class CreateTables {
         tables.add("CREATE TABLE IF NOT EXISTS ITEMS ( "
                 + "ID INTEGER NOT NULL, "
                 + "DESCRICAO VARCHAR(100) NOT NULL, "
-                + "SEGMENTO VARCHAR(50) NOT NULL, "
-                + "MARCA VARCHAR(50), "
+                + "ATIVO BOOLEAN NOT NULL, "
+                + "ID_SEGMENTO INTEGER NOT NULL, "
+                + "ID_MARCA INTEGER NOT NULL, "
                 + "PRIMARY KEY(ID) );"
         );
 
         tables.add("CREATE TABLE IF NOT EXISTS VERSION( "
-                + "ID INTEGER NOT NULL AUTO_INCREMENT, "
                 + "DB_VERSION VARCHAR(10) NOT NULL, "
                 + "SOFTWARE_VERSION VARCHAR(15) NOT NULL, "
+                + "PRIMARY KEY(DB_VERSION) );"
+        );
+
+        tables.add("CREATE TABLE IF NOT EXISTS SEGMENTO( "
+                + "ID INTEGER NOT NULL AUTO_INCREMENT, "
+                + "DESCRICAO VARCHAR(100) NOT NULL, "
+                + "ATIVO BOOLEAN NOT NULL, "
+                + "PRIMARY KEY(ID) );"
+        );
+
+        tables.add("CREATE TABLE IF NOT EXISTS MARCA( "
+                + "ID INTEGER NOT NULL AUTO_INCREMENT, "
+                + "DESCRICAO VARCHAR(100) NOT NULL, "
+                + "ATIVO BOOLEAN NOT NULL, "
+                + "ID_SEGMENTO INTEGER NOT NULL, "
                 + "PRIMARY KEY(ID) );"
         );
 

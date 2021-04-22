@@ -1,12 +1,10 @@
 package com.greve.Model;
 
-public class Items {
+public class Marca {
 
     private long id;
     private String descricao;
     private boolean ativo;
-    private int idSegmento; //Ex: Doce, Salgado, Perecivel, etc.
-    private int idMarca;
 
     public long getId() {
         return id;
@@ -30,21 +28,5 @@ public class Items {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
-    }
-
-    public int getIdSegmento() {
-        return idSegmento;
-    }
-
-    public void setIdSegmento(int idSegmento) {
-        this.idSegmento = idSegmento;
-    }
-
-    public int getIdMarca() {
-        return idMarca;
-    }
-
-    public void setIdMarca(int idMarca) {
-        this.idMarca = idMarca;
     }
 }

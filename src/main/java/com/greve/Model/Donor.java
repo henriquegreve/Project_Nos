@@ -8,7 +8,7 @@ public class Donor {
     private String firstName;
     private String lastName;
     private String cpfCnpj;
-    private long idAddress;
+    private int idAddress;
     private String email;
     private String contact;
     private int type;
@@ -38,11 +38,11 @@ public class Donor {
         this.cpfCnpj = cpfCnpj;
     }
 
-    public long getIdAddress() {
+    public int getIdAddress() {
         return idAddress;
     }
 
-    public void setIdAddress(long idAddress) {
+    public void setIdAddress(int idAddress) {
         this.idAddress = idAddress;
     }
 

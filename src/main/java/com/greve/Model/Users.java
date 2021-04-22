@@ -4,9 +4,10 @@ package com.greve.Model;
 public class Users{
 
     private long id;
+    private String nome;
     private String username;
     private String password;
-    private String level;
+    private int level;
 
     public long getId() {
         return id;
@@ -32,12 +33,19 @@ public class Users{
         this.password = password;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
